@@ -19,8 +19,8 @@ const SPAM_PENALTY_DEFAULT = 50
 
 const DEFAULT_DURATION = DAY_IN_SECONDS
 
-const DURATION_LABEL = 'lock duration'
-const DURATION_HELP_TEXT = `Lock Duration, The lock duration is the period of time that the tokens will be locked. `
+const DURATION_LABEL = 'Lock Duration'
+const DURATION_HELP_TEXT = ` The lock duration is the period of time that the tokens will be locked.`
 
 function useFieldsLayout() {
   // In its own hook to be adapted for smaller views
@@ -195,7 +195,7 @@ function LockScreen({
             <React.Fragment>
               Lock amount
               <Help hint="What’s the lock amount?">
-                <strong>Lock amount</strong> is the amount of tokens to lock.
+                <strong>Lock Amount</strong> is the amount of tokens to lock.
               </Help>
             </React.Fragment>
           }
@@ -214,7 +214,10 @@ function LockScreen({
         label={
           <React.Fragment>
             {DURATION_LABEL}
-            <Help hint="What’s the lock duration?">{DURATION_HELP_TEXT}</Help>
+            <Help hint="What’s the lock duration?">
+              <strong>{DURATION_LABEL}</strong>
+              {DURATION_HELP_TEXT}
+            </Help>
           </React.Fragment>
         }
       />
@@ -224,10 +227,10 @@ function LockScreen({
           <React.Fragment>
             Spam penalty %
             <Help hint="What’s the spam penalty?">
-              <strong>Spam penalty</strong>
-              Is a % of the base lock amount and lock duration. The more active
-              locks an account has, the more tokens will have to lock and for a
-              longer period of time for subsequent proposals.
+              <strong>Spam Penalty </strong>
+              is a % of the base lock amount and lock duration. The more active
+              locks an account has, the more tokens it will have to lock and for a
+              longer period of time for creating subsequent votes.
             </Help>
           </React.Fragment>
         }
@@ -260,8 +263,8 @@ function LockScreen({
         These settings will determine the token to be locked, how long tokens
         are locked, the amount of tokens to lock and a penalty percentage for
         spamming proposals. At initialization the token address parameter can be
-        set to an ERC20 token. It cannot be changed. If a change is necessary
-        the user can install a new instance and change permissions in the
+        set to any ERC20 token. It cannot be changed. If a change is necessary
+        the user can install a new instance and change the permissions in the
         organization to reflect the change.
       </Info>
 

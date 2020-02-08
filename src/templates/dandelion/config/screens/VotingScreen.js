@@ -19,18 +19,17 @@ const DEFAULT_DURATION = DAY_IN_SECONDS
 const DEFAULT_BUFFER = HOUR_IN_SECONDS
 const DEFAULT_DELAY = DAY_IN_SECONDS
 
-const DURATION_LABEL = 'Vote duration'
-const DURATION_HELP_TEXT = `Vote Duration is the length of time that the vote
-will be open for participation. For example, if the Vote Duration is
-set to 24 hours, then tokenholders have 24 hours to participate in
+const DURATION_LABEL = 'Vote Duration'
+const DURATION_HELP_TEXT = ` is the length of time that the vote
+will be open for participation. For example, if the vote duration is
+set to 24 hours, then token holders have 24 hours to participate in
 the vote.`
 
 const BUFFER_LABEL = 'Vote buffer'
-const BUFFER_HELP_TEXT = `Votes are processed in sequence with the start time of each proposal seperated by a proposal buffer`
+const BUFFER_HELP_TEXT = `Votes are processed in sequence with the start time of each vote separated by a vote buffer`
 
-const DELAY_LABEL = 'Vote delay'
-const DELAY_HELP_TEXT =
-  'Vote Delay is the delay period after a vote is approved but before it can be executed'
+const DELAY_LABEL = 'Vote Delay'
+const DELAY_HELP_TEXT = ' is the delay period after a vote is approved but before it can be executed'
 
 function validationError(duration) {
   if (duration < 1 * MINUTE_IN_SECONDS) {
@@ -224,7 +223,7 @@ function VotingScreen({
         label={
           <React.Fragment>
             {DURATION_LABEL}
-            <Help hint="What’s the vote duration?">{DURATION_HELP_TEXT}</Help>
+            <Help hint="What’s the vote duration?"><strong>{DURATION_LABEL}</strong>{DURATION_HELP_TEXT}</Help>
           </React.Fragment>
         }
       />
@@ -244,7 +243,7 @@ function VotingScreen({
         label={
           <React.Fragment>
             {DELAY_LABEL}
-            <Help hint="What’s the vote delay?">{DELAY_HELP_TEXT}</Help>
+            <Help hint="What’s the vote delay?"><strong>{DELAY_LABEL}</strong>{DELAY_HELP_TEXT}</Help>
           </React.Fragment>
         }
       />
